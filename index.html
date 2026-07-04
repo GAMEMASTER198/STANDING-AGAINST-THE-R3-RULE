@@ -158,11 +158,10 @@
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 3rem;
-            max-width: 1300px;
+            max-width: 1200px;
             margin: 0 auto;
-            align-items: start;
         }
 
         .card {
@@ -178,7 +177,6 @@
             transform: translateY(-5px);
         }
 
-        /* Standard Wrapper for Image 1 */
         .card-image-wrapper {
             width: 100%;
             height: 450px;
@@ -194,23 +192,6 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: block;
-        }
-
-        /* CHANGED: Exclusive target styling for IMG2 to lock 1414x2000 dimension limits */
-        .portrait-card-wrapper {
-            width: 100%;
-            height: auto;
-            aspect-ratio: 1414 / 2000;
-            background: #111;
-            overflow: hidden;
-        }
-
-        .portrait-card-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: fill; 
-            display: block;
         }
 
         .card-content {
@@ -273,7 +254,6 @@
             .tagline { font-size: 1.4rem; }
             .section-title { font-size: 2.2rem; }
             .manifesto { padding: 4rem 1rem; }
-            .grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -314,7 +294,7 @@
             </div>
 
             <div class="card">
-                <div class="portrait-card-wrapper">
+                <div class="card-image-wrapper">
                     <img src="img2.png" alt="Our Language Our Choice Jantar Mantar Flyer">
                 </div>
                 <div class="card-content">
@@ -333,7 +313,7 @@
     <footer>
         <div class="alliance-box">
             <h4>Building the Coalition</h4>
-            <p style="color: var(--text-muted);">As this movement scales nationally, we aim to unify our cause with larger socio-educational reforms, aligning alongside broader advocacy strategies to hold accountability at the highest levels and demand a systemic overhaul of current education policy decisions.</p>
+            <p style="color: var(--text-muted);">As this movement scales nationally, we aim to unify our cause with larger socio-educational reforms, aligning alongside visionaries like <span class="highlight">Sonam Wangchuk</span> to hold accountability at the highest levels and demand a systemic overhaul of current education policy decisions.</p>
         </div>
         <p class="footer-text">This is a peaceful assembly initiative organized by concerned students, parents, and educators. Know your rights. Keep it peaceful. Keep it loud.</p>
         <p class="footer-text">This protest is not against any school in particular. It opposes the R3 rule by CBSE.</p>
@@ -342,5 +322,7 @@
 
 </body>
 </html>
+        
+   
      
    
