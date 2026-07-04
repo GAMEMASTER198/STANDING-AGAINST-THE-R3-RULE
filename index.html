@@ -158,11 +158,11 @@
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); /* Increased card width for high-res layout */
             gap: 3rem;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            align-items: start; /* Prevents cards from stretching unevenly */
+            align-items: start;
         }
 
         .card {
@@ -178,11 +178,11 @@
             transform: translateY(-5px);
         }
 
-        /* FIXED: Portrait container configuration */
+        /* CHANGED: Configured wrapper to scale accurately with a 1414x2000 portrait aspect ratio */
         .card-image-wrapper {
             width: 100%;
-            height: auto; /* Dynamic height to fit portrait images */
-            max-height: 580px; /* Keeps aspect ratio under control */
+            height: auto; 
+            aspect-ratio: 1414 / 2000; /* Strict adherence to the asset properties */
             background: #111;
             display: flex;
             align-items: center;
@@ -193,8 +193,8 @@
 
         .card-image-wrapper img {
             width: 100%;
-            height: auto;
-            object-fit: contain; /* Ensures full flyer details are visible without bad cropping */
+            height: 100%;
+            object-fit: cover; /* Ensures image fills the exact portrait canvas dimension */
             display: block;
         }
 
@@ -258,11 +258,13 @@
             .tagline { font-size: 1.4rem; }
             .section-title { font-size: 2.2rem; }
             .manifesto { padding: 4rem 1rem; }
+            .grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
+    <!-- HERO SECTION -->
     <header>
         <div class="badge">Class 9 Student Movement</div>
         <h1>Stand Together <span>Against the R3 Rule</span></h1>
@@ -273,16 +275,19 @@
         </div>
     </header>
 
+    <!-- MANIFESTO SECTION -->
     <section id="manifesto" class="manifesto">
         <h2>Why We Fight</h2>
         <p>Education is meant to broaden horizons, not restrict identity. The imposition of the <span class="highlight">R3 Rule on Class 9 students</span> strips away our autonomy over what we learn and how we express ourselves.</p>
         <p>We believe curriculum changes should empower students, not force standardizations that disregard our voices. This is a peaceful, unified call to reclaim our academic freedom. Your voice matters, and together, it is unstoppable.</p>
     </section>
 
+    <!-- EVENTS & FLYERS GALLERY -->
     <section id="protest-details" class="events-gallery">
         <h2 class="section-title">Join the Mobilization</h2>
         <div class="grid">
             
+            <!-- Protest 1: Main Square -->
             <div class="card">
                 <div class="card-image-wrapper">
                     <img src="img1.png" alt="United Against the R3 Rule Flyer">
@@ -297,6 +302,7 @@
                 </div>
             </div>
 
+            <!-- Protest 2: Jantar Mantar (Configured for 1414x2000 Aspect Ratio) -->
             <div class="card">
                 <div class="card-image-wrapper">
                     <img src="img2.png" alt="Our Language Our Choice Jantar Mantar Flyer">
@@ -314,6 +320,7 @@
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer>
         <div class="alliance-box">
             <h4>Building the Coalition</h4>
@@ -322,10 +329,6 @@
         <p class="footer-text">This is a peaceful assembly initiative organized by concerned students, parents, and educators. Know your rights. Keep it peaceful. Keep it loud.</p>
         <p class="footer-text">This protest is not against any school in particular. It opposes the R3 rule by CBSE.</p>
         <p class="footer-text">Initative by Samarth Kalra.</p>
-    </footer>
-
-    </footer>
-
     </footer>
 
 </body>
