@@ -158,10 +158,11 @@
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
             gap: 3rem;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
+            align-items: start;
         }
 
         .card {
@@ -177,21 +178,36 @@
             transform: translateY(-5px);
         }
 
-        .card-image-wrapper {
+        /* FOR IMG1: Forced 2000x1414 Landscape Box */
+        .landscape-card-wrapper {
             width: 100%;
-            height: 450px;
+            height: auto;
+            aspect-ratio: 2000 / 1414;
             background: #111;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             overflow: hidden;
-            position: relative;
         }
 
-        .card-image-wrapper img {
+        .landscape-card-wrapper img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: fill;
+            display: block;
+        }
+
+        /* FOR IMG2: Forced 1414x2000 Portrait Box */
+        .portrait-card-wrapper {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1414 / 2000;
+            background: #111;
+            overflow: hidden;
+        }
+
+        .portrait-card-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+            display: block;
         }
 
         .card-content {
@@ -254,6 +270,7 @@
             .tagline { font-size: 1.4rem; }
             .section-title { font-size: 2.2rem; }
             .manifesto { padding: 4rem 1rem; }
+            .grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -280,13 +297,13 @@
         <div class="grid">
             
             <div class="card">
-                <div class="card-image-wrapper">
+                <div class="landscape-card-wrapper">
                     <img src="img1.png" alt="United Against the R3 Rule Flyer">
                 </div>
                 <div class="card-content">
-                    <h3>Protest Against R3</h3>
+                    <h3>Protest against R3</h3>
                     <ul class="meta-list">
-                        <li><strong>Date:</strong> July 15, 2026</li>
+                        <li><strong>Date:</strong> 15 July</li>
                         <li><strong>Time:</strong> 6:00 PM</li>
                         <li><strong>Location:</strong> Jantar Mantar</li>
                     </ul>
@@ -294,13 +311,13 @@
             </div>
 
             <div class="card">
-                <div class="card-image-wrapper">
+                <div class="portrait-card-wrapper">
                     <img src="img2.png" alt="Our Language Our Choice Jantar Mantar Flyer">
                 </div>
                 <div class="card-content">
-                    <h3>(Also) Protest Against R3</h3>
+                    <h3>(Also) Protest against R3</h3>
                     <ul class="meta-list">
-                        <li><strong>Date:</strong> July 15, 2026</li>
+                        <li><strong>Date:</strong> 15 July</li>
                         <li><strong>Time:</strong> 6:00 PM</li>
                         <li><strong>Location:</strong> Jantar Mantar</li>
                     </ul>
@@ -313,15 +330,18 @@
     <footer>
         <div class="alliance-box">
             <h4>Building the Coalition</h4>
-            <p style="color: var(--text-muted);">As this movement scales nationally, we aim to unify our cause with larger socio-educational reforms, aligning alongside visionaries like <span class="highlight">Sonam Wangchuk</span> to hold accountability at the highest levels and demand a systemic overhaul of current education policy decisions.</p>
+            <p style="color: var(--text-muted);">As this movement scales nationally, we aim to unify our cause with larger socio-educational reforms, aligning alongside broader advocacy strategies to hold accountability at the highest levels and demand a systemic overhaul of current education policy decisions.</p>
         </div>
         <p class="footer-text">This is a peaceful assembly initiative organized by concerned students, parents, and educators. Know your rights. Keep it peaceful. Keep it loud.</p>
-        <p class="footer-text">This protest is not against any school in particular. It opposes the R3 rule by CBSE.</p>
+        <p class="footer-text">This Protest is not directed towards any specific school or institution. It is directed towards CBSE for the new R3 rule.</p>
         <p class="footer-text">Initative by Samarth Kalra.</p>
     </footer>
 
 </body>
 </html>
+        
+   
+
         
    
      
